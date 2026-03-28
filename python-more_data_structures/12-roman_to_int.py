@@ -13,11 +13,9 @@ def roman_to_int(roman_string):
 
     for i in range(length):
         val = roman_dict.get(roman_string[i], 0)
-        # Check next value without exceeding 79 characters
         if i + 1 < length and roman_dict.get(roman_string[i+1], 0) > val:
             total -= val
         else:
             total += val
 
     return total
-~                                                                       
