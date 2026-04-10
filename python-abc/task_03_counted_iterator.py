@@ -20,7 +20,7 @@ class CountedIterator:
 
     def __next__(self):
         """
-        Fetches the next item and increments the counter.
+        Increments the counter and fetches the next item.
         """
         item = next(self.iterator)
         self.counter += 1
