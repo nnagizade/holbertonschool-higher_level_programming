@@ -20,12 +20,12 @@ class CountedIterator:
 
     def __next__(self):
         """
-        Increments the counter and fetches the next item.
+        Fetches the next item and increments the counter.
         """
         item = next(self.iterator)
         self.counter += 1
         return item
 
     def __iter__(self):
-        """Returns itself to support iteration."""
+        """Returns the iterator object itself."""
         return self
