@@ -1,59 +1,68 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """
-Module for Shapes, Interfaces, and Duck Typing.
+Module for Shape abstract class and its subclasses Circle and Rectangle
 """
 from abc import ABC, abstractmethod
 import math
 
 
 class Shape(ABC):
-    """Abstract class Shape."""
+    """
+    Abstract base class for shapes
+    """
 
     @abstractmethod
     def area(self):
-        """Abstract method for area."""
+        """Calculates the area of the shape"""
         pass
 
     @abstractmethod
     def perimeter(self):
-        """Abstract method for perimeter."""
+        """Calculates the perimeter of the shape"""
         pass
 
 
 class Circle(Shape):
-    """Concrete class Circle."""
+    """
+    Circle class that inherits from Shape
+    """
 
     def __init__(self, radius):
-        """Initialize with radius."""
+        """Initializes the circle with a radius"""
         self.radius = radius
 
     def area(self):
-        """Calculate area of circle."""
+        """Returns the area of the circle"""
         return math.pi * (self.radius ** 2)
 
     def perimeter(self):
-        """Calculate perimeter of circle."""
+        """Returns the perimeter (circumference) of the circle"""
         return 2 * math.pi * self.radius
 
 
 class Rectangle(Shape):
-    """Concrete class Rectangle."""
+    """
+    Rectangle class that inherits from Shape
+    """
 
     def __init__(self, width, height):
-        """Initialize with width and height."""
+        """Initializes the rectangle with width and height"""
         self.width = width
         self.height = height
 
     def area(self):
-        """Calculate area of rectangle."""
+        """Returns the area of the rectangle"""
         return self.width * self.height
 
     def perimeter(self):
-        """Calculate perimeter of rectangle."""
+        """Returns the perimeter of the rectangle"""
         return 2 * (self.width + self.height)
 
 
 def shape_info(shape):
-    """Prints the area and perimeter using duck typing."""
-    print("Area: {}".format(shape.area()))
-    print("Perimeter: {}".format(shape.perimeter()))
+    """
+    Standalone function that demonstrates duck typing by calling
+    area and perimeter on the passed shape object.
+    """
+    print(f"Area: {shape.area()}")
+    print(f"Perimeter: {shape.perimeter()}")
