@@ -21,6 +21,7 @@ class CountedIterator:
     def __next__(self):
         """
         Increments the counter and fetches the next item.
+        If no items are left, StopIteration is raised naturally.
         """
         item = next(self.iterator)
         self.counter += 1
